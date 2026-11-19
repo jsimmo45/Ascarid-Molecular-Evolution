@@ -1,0 +1,44 @@
+# Sources for assemble_main_figures.py: one panel per line.
+# figure = main-figure number; panel = short name used in the copy's file name,
+# starting with its panel letter(s); path = the panel's SVG (PDF and PNG with
+# the same stem are copied too), or '-' for a panel made in Illustrator, which
+# is listed in the summary but not copied; note = free text (may be empty).
+# Relative paths resolve against --base-dir (PROJECT_DIR, the miniprot
+# directory); ${POPGEN_DIR} is exported by the wrapper.
+#
+# Renumbered 2026-10-26 after Jianbin Wang's review: the Ascaris dN/dS genome
+# trace (Fig 3) moved to supplementary fig. S6, so Figs 4-7 became 3-6; the
+# gene-set Venn diagram is new as Fig 1D. Lines dated 20261027 are the reruns
+# for that review (Venn, codon strip, CBR profile and step); if they ran on
+# another day, replace 20261027 with that date in those lines, e.g.
+#   sed -i "s/_20261027\//_YYYYMMDD\//" main_figure_sources.tsv
+# The five Fig 6 lines name the 2026-10-29 rerun of figure_polymorphism.py
+# (panel B as two pairs side by side, after the 2026-10-28 meeting); if it
+# ran on another day, replace 20261029 in those lines with that date.
+# Re-lettered 2026-11-02 (Figure_1_v8), so the Fig 1 panels are cited in order:
+# B gene-set Venn diagram (was D), C dS distributions, D dS tree (was B). The
+# panel names below set the copies' file names (Fig1_B_gene_set_venn, ...).
+# Point a line at a newer run and rerun the wrapper.
+figure	panel	path	note
+1	A_schematic	-	Illustrator; not on Isaac. Add the germline-soma diagram from the top of the old 6F model (2026-10-26)
+1	B_gene_set_venn	results/gene_set_venn_20261027/gene_set_venn.svg	89 x 70 mm; new 2026-10-26 as 1D (run_gene_set_venn.sh); 1B since 2026-11-02
+1	C_dS_distributions	results/four_way_dnds_20260817_v2/ds_overlay.svg	
+1	D_dS_tree	results/four_way_dnds_20260817_v2/ds_tree_four_way.svg	was 1B until 2026-11-02
+2	A_dnds_decomposition	results/dnds_decomposition_20261014/dnds_decomposition.svg	185 x 58 mm; boxes from every gene
+2	B-C_codon_usage	results/codon_usage_ascaris_20261027/codon_usage_panel.svg	185 x 60 mm strip: B ENC-GC3s pair, C dENC box (rerun 2026-10-26: order, filled centroids)
+2	D_gene_structure	results/gene_structure_20261013_loci/gene_structure_panel.svg	job 6390303
+3	A_CBR_profile	results/cbr_meta_profile_20261031_134556/cbr_meta_profile.svg	plain-text fold labels, upright region labels (rerun 2026-10-31; the run that drew 3C)
+3	B_gene_density	results/gene_density_cbr_20261031_130557/gene_density_cbr.svg	plain y label, mean label in the lower corner, 3 mm top margin (rerun 2026-10-31)
+3	C_chr07_track	results/cbr_meta_profile_20261031_134556/chromosome_track.svg	chromosome 7 (2026-10-31; was chromosome 1)
+3	D_boundary_step	results/cbr_changepoint_20261031_130557/cbr_slope_step.svg	y label log10(dN/dS) with an Arial subscript 10 (rerun 2026-10-31)
+4	A-C_branch_grid	results/dnds_decomposition_20261022_123920/fig5_branch_grid_as_region.svg	whole figure (branch_dnds_decomposition.py grid, band-point run of 2026-10-22)
+5	A-B_expression_stage	results/functional_enrichment_20261019_112200/6AB_expression_stage.svg	job 6436586; A left half, B right half
+5	C_functional_classes	results/functional_enrichment_20261019_112200/6C_functional_class_forest.svg	job 6436586
+5	D_insulation_by_region	results/multivariate_insulation_20261019_112243_teste_noEV/6D_insulation_by_region.svg	job 6436588; 89 mm, beside 6C
+5	E_insulation_models	results/multivariate_insulation_20261019_112243_teste_noEV/6E_insulation_models.svg	job 6436588; 89 mm, beside 6F
+5	F_schematic	-	Illustrator; not on Isaac (update to four species; its germline-soma diagram moves to Fig 1A, 2026-10-26)
+6	A-D_polymorphism	${POPGEN_DIR}/results/figures/figure_polymorphism_20261029_pi_filtered_miss4/Figure_polymorphism.svg	assembled figure; set each π in Symbol or Times when assembling (Arial's π reads as "TT")
+6	A_fold_forest	${POPGEN_DIR}/results/figures/figure_polymorphism_20261029_pi_filtered_miss4/panelA_fold_forest.svg	
+6	B_pi0pi4_matched	${POPGEN_DIR}/results/figures/figure_polymorphism_20261029_pi_filtered_miss4/panelB_pi0pi4_matched.svg	gene pair, then window pair (2026-10-29)
+6	C_pi0pi4_vs_pi4	${POPGEN_DIR}/results/figures/figure_polymorphism_20261029_pi_filtered_miss4/panelC_pi0pi4_vs_pi4.svg	
+6	D_DoS	${POPGEN_DIR}/results/figures/figure_polymorphism_20261029_pi_filtered_miss4/panelD_dos.svg	

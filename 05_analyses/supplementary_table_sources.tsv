@@ -1,0 +1,73 @@
+# Sources for make_supplementary_tables.py: one input per line, key<TAB>path.
+# Relative paths resolve against --base-dir (run_make_supplementary_tables.sh
+# passes PROJECT_DIR from config.sh). ${VAR} is expanded from the environment;
+# the wrapper exports REPO_ROOT and POPGEN_DIR. Override any line at run time
+# with --source key=path. Point a key at a newer run here, in one place.
+# Section numbers are the tables' numbers since 2026-10-12 (NUMBER in the script).
+#
+# S1  pairwise rates
+annotated	results/annotate_regions_20260817/kaks_annotated.tsv
+gene_structure	results/gene_structure_20260817_loci/gene_structure_per_gene.tsv
+# S7  four-species branch models
+branch_stats	results/branch_dnds_four_20261010_113902/branch_stats.tsv
+branch_quartets	results/branch_dnds_four_20261010_113902/branch_dnds_four_annotated.tsv
+branch_decomposition	results/dnds_decomposition_20261010_141243/dnds_decomposition_stats.tsv
+# S3  dN/dS above 1
+omega_genes	results/positive_selection_20261012/omega_above_one_genes.tsv
+omega_stats	results/positive_selection_20261012/positive_selection_stats.tsv
+# S4  codon usage, three species
+codon_summary_ascaris	results/codon_usage_ascaris_20261017/codon_usage_summary.tsv
+codon_report_ascaris	results/codon_usage_ascaris_20261017/codon_usage_summary.txt
+codon_genes_ascaris	results/codon_usage_ascaris_20261017/codon_usage_per_gene.tsv
+codon_summary_parascaris	results/codon_usage_parascaris_20260817/codon_usage_summary.tsv
+codon_report_parascaris	results/codon_usage_parascaris_20260817/codon_usage_summary.txt
+codon_genes_parascaris	results/codon_usage_parascaris_20260817/codon_usage_per_gene.tsv
+codon_summary_toxocara	results/codon_usage_toxocara_20260817/codon_usage_summary.tsv
+codon_report_toxocara	results/codon_usage_toxocara_20260817/codon_usage_summary.txt
+codon_genes_toxocara	results/codon_usage_toxocara_20260817/codon_usage_per_gene.tsv
+# S9  insulation and dN/dS models. A and B: testis, three compartment
+#     specifications. C: five Hi-C stages, each without an eigenvector and with
+#     its own stage's expression (run_multivariate_insulation.sh <stage> none);
+#     keep each stage's three lines on one run folder. Testis is job 6436588
+#     (2026-10-19), the run behind fig. 5D-E and S13B, whose models equal those
+#     of the 2026-10-17 run A and B read before; its noEV run is models_noEV.
+models_noEV	results/multivariate_insulation_20261019_112243_teste_noEV/multivariate_models.tsv
+models_EVtestis	results/multivariate_insulation_20261019_112243_teste_EVteste/multivariate_models.tsv
+models_EV4cell	results/multivariate_insulation_20261019_112243_teste_EV60hr/multivariate_models.tsv
+stage_pergene_testis	results/multivariate_insulation_20261019_112243_teste_noEV/multivariate_pergene.tsv
+stage_summary_testis	results/multivariate_insulation_20261019_112243_teste_noEV/multivariate_summary.txt
+stage_models_ovary	results/multivariate_insulation_20261101_133526_ovary_noEV/multivariate_models.tsv
+stage_pergene_ovary	results/multivariate_insulation_20261101_133526_ovary_noEV/multivariate_pergene.tsv
+stage_summary_ovary	results/multivariate_insulation_20261101_133526_ovary_noEV/multivariate_summary.txt
+stage_models_zygote	results/multivariate_insulation_20261101_133526_0hr_noEV/multivariate_models.tsv
+stage_pergene_zygote	results/multivariate_insulation_20261101_133526_0hr_noEV/multivariate_pergene.tsv
+stage_summary_zygote	results/multivariate_insulation_20261101_133526_0hr_noEV/multivariate_summary.txt
+stage_models_48h	results/multivariate_insulation_20261101_134408_48hr_noEV/multivariate_models.tsv
+stage_pergene_48h	results/multivariate_insulation_20261101_134408_48hr_noEV/multivariate_pergene.tsv
+stage_summary_48h	results/multivariate_insulation_20261101_134408_48hr_noEV/multivariate_summary.txt
+stage_models_60h	results/multivariate_insulation_20261101_134408_60hr_noEV/multivariate_models.tsv
+stage_pergene_60h	results/multivariate_insulation_20261101_134408_60hr_noEV/multivariate_pergene.tsv
+stage_summary_60h	results/multivariate_insulation_20261101_134408_60hr_noEV/multivariate_summary.txt
+# S2  rate heterogeneity, tree additivity, molecular clock
+rate_table	supp_rate_table/supp_table_rates.tsv
+rate_caption	supp_rate_table/caption.txt
+clock_sites12	clock_test_sites12/clock_test_results.tsv
+clock_sites3	clock_test_sites3/clock_test_results.tsv
+clock_sitesall	clock_test_sitesall/clock_test_results.tsv
+# S8  T. canis gene-model diagnostic
+tox_premise	results/toxocara_annotation_diagnostic_20261011_132054/test1_premise.tsv
+tox_strata	results/toxocara_annotation_diagnostic_20261011_132054/test2_strata.tsv
+tox_regression	results/toxocara_annotation_diagnostic_20261011_132054/test3_regression.tsv
+# S5  micro-synteny
+synteny_summary	results/microsynteny_20261012_103359/microsynteny_summary.tsv
+synteny_tests	results/microsynteny_20261012_103359/microsynteny_tests.tsv
+synteny_sweep	results/microsynteny_20261012_103359/microsynteny_threshold_sweep.tsv
+# S10 population-sample screen (cohort_audit is optional: a cross-check only)
+cohort_metadata	07_polymorphism/cohort_20260820/sample_metadata.tsv
+cohort_audit	${POPGEN_DIR}/audit_all_20260820/germline_fraction_summary.tsv
+# S11 alternatives tested (curated from the Results text; ships with this script)
+popgen_alternatives	${REPO_ROOT}/05_analyses/polymorphism_alternatives.tsv
+mk_summary	${POPGEN_DIR}/results/pi_filtered_miss4/mk_summary.tsv
+# S6  X chromosomes versus autosomes
+x_autosome	results/x_autosome_check_20261010_144614/per_chromosome.tsv
+x_dosage	results/hic_x_dosage_top_20261011_130324/per_chromosome.tsv

@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the archived release you used."
+title: "Ascarid-Molecular-Evolution: code for the molecular evolution of genes removed by programmed DNA elimination in ascarid nematodes"
+abstract: >-
+  Python and shell code for the molecular evolution of genes removed by
+  programmed DNA elimination in four ascarid nematodes (Ascaris, Parascaris
+  univalens, Baylisascaris schroederi and Toxocara canis): pairwise and
+  branch-specific dN/dS, constraint around chromosomal breakage regions, codon
+  usage, gene structure, chromatin context, and polymorphism in an Ascaris
+  population sample.
+type: software
+authors:
+  - family-names: Simmons
+    given-names: James R.
+    orcid: "https://orcid.org/0000-0002-0888-1151"
+    affiliation: "Department of Biochemistry & Cellular and Molecular Biology, University of Tennessee, Knoxville"
+repository-code: "https://github.com/jsimmo45/Ascarid-Molecular-Evolution"
+license: MIT
+version: 1.0.0
+keywords:
+  - programmed DNA elimination
+  - molecular evolution
+  - dN/dS
+  - relaxed selection
+  - polymorphism
+  - nematodes
+  - Ascaris

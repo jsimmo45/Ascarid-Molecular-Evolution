@@ -1,0 +1,156 @@
+repo_path	source	used_for
+.gitignore	written for the public repository	keeps config.sh and job logs out of git
+01_gene_sets/run_translate_cds.sh	run_baylisascaris.sh step 1 (same command)	wrapper (B. schroederi CDS to protein)
+01_gene_sets/translate_cds.py	translate_cds.py	B. schroederi CDS to protein
+02_orthologs/reciprocal_best_hits.py	reciprocal_best_hits.py	1:1 orthologs (blastp reciprocal best hits), six species pairs
+02_orthologs/run_rbh.sh	run_rbh.sh	wrapper (Ascaris x P. univalens; rbh_results)
+02_orthologs/run_rbh_bsc.sh	run_baylisascaris.sh steps 2-3 (same commands; match rbh_{As,Pu}_Bsc/rbh.log)	wrapper (Ascaris x B. schroederi and P. univalens x B. schroederi blastp; rbh_As_Bsc, rbh_Pu_Bsc)
+02_orthologs/run_rbh_bsc_fix.sh	run_rbh_bsc_fix.sh	wrapper (B. schroederi pairs re-merged after the identifier fix; rbh_*_Bsc_v2)
+02_orthologs/run_rbh_toxocara.sh	rebuilt from rbh_Tox_{As,Pu,Bsc}/rbh.log (original wrapper not kept)	wrapper (T. canis x Ascaris, P. univalens and B. schroederi blastp; rbh_Tox_As, rbh_Tox_Pu, rbh_Tox_Bsc)
+03_rates/branch_dnds_four.py	Ascarid-Molecular-Evolution/03_rates/branch_dnds_four.py	codeml free-ratio branch models (Fig 4, S8, table S7)
+03_rates/build_quartet_alignments.py	build_quartet_alignments.py	four-species codon alignments (Fig 4)
+03_rates/kaks_pipeline.py	kaks_pipeline.py	pairwise dN and dS (MAFFT, yn00), six pairs
+03_rates/molecular_clock_test.py	molecular_clock_test.py	clock and Tajima relative-rate tests (table S2)
+03_rates/run_branch_dnds_four.sh	Ascarid-Molecular-Evolution/03_rates/run_branch_dnds_four.sh	wrapper
+03_rates/run_build_quartet_alignments.sh	run_build_quartet_alignments.sh	wrapper
+03_rates/run_kaks_bsc_v2.sh	rebuilt from kaks_{As,Pu,Tox}_Bsc_v2/kaks_pipeline.log (original wrapper not kept)	wrapper (the three B. schroederi pairs on the corrected orthologs; kaks_*_Bsc_v2)
+03_rates/run_kaks_pipeline_2.sh	run_kaks_pipeline_2.sh	wrapper (Ascaris x P. univalens; kaks_results)
+03_rates/run_kaks_toxocara.sh	rebuilt from kaks_Tox_As/ and kaks_Tox_Pu/kaks_pipeline.log (original wrapper not kept)	wrapper (T. canis x Ascaris and T. canis x P. univalens; kaks_Tox_As, kaks_Tox_Pu)
+03_rates/run_molecular_clock_test.sh	run_molecular_clock_test.sh	wrapper
+04_annotation/annotate_tox_kaks.py	annotate_tox_kaks.py	T. canis region labels on the T. canis pairwise tables (S10)
+04_annotation/run_annotate_tox_kaks.sh	run_annotate_tox_kaks.sh	wrapper
+05_analyses/annotate_regions.py	Ascarid-Molecular-Evolution/05_analyses/annotate_regions.py	region labels and CBR distances (table S1, S7)
+05_analyses/assemble_main_figures.py	Ascarid-Molecular-Evolution/05_analyses/assemble_main_figures.py	assembles the main figure panels
+05_analyses/assemble_supplementary_figures.py	Ascarid-Molecular-Evolution/05_analyses/assemble_supplementary_figures.py	assembles the supplementary figure panels
+05_analyses/branch_dnds_decomposition.py	Ascarid-Molecular-Evolution/05_analyses/branch_dnds_decomposition.py	Fig 4, S8, table S7A
+05_analyses/cbr_changepoint_relax.py	Ascarid-Molecular-Evolution/05_analyses/cbr_changepoint_relax.py	Fig 3D, S3B
+05_analyses/cbr_edge_check.py	Ascarid-Molecular-Evolution/05_analyses/cbr_edge_check.py (new 2026-10-29)	Fig 3D edge check: the bin next to the CBR, and genes reaching across it (no figure)
+05_analyses/cbr_meta_profile.py	Ascarid-Molecular-Evolution/05_analyses/cbr_meta_profile.py	Fig 3A, 3C
+05_analyses/codon_usage_bias.py	Ascarid-Molecular-Evolution/05_analyses/codon_usage_bias.py	Fig 2B-C, S4, table S4
+05_analyses/compositional_analysis.py	Ascarid-Molecular-Evolution/05_analyses/compositional_analysis.py	S2
+05_analyses/dnds_decomposition.py	Ascarid-Molecular-Evolution/05_analyses/dnds_decomposition.py	Fig 2A, S1
+05_analyses/dnds_within_class.py	Ascarid-Molecular-Evolution/05_analyses/dnds_within_class.py	S12D
+05_analyses/four_way_dnds.py	Ascarid-Molecular-Evolution/05_analyses/four_way_dnds.py	Fig 1C-D
+05_analyses/functional_enrichment.py	Ascarid-Molecular-Evolution/05_analyses/functional_enrichment.py	Fig 5A-C, S12A
+05_analyses/gene_density_cbr.py	Ascarid-Molecular-Evolution/05_analyses/gene_density_cbr.py	Fig 3B
+05_analyses/gene_set_venn.py	Ascarid-Molecular-Evolution/05_analyses/gene_set_venn.py (written 2026-10-26)	Fig 1B
+05_analyses/gene_structure.py	Ascarid-Molecular-Evolution/05_analyses/gene_structure.py	Fig 2D, table S1 gene-structure columns
+05_analyses/genome_trace.py	Ascarid-Molecular-Evolution/05_analyses/genome_trace.py	S6
+05_analyses/germline_codon_gc3s_adjusted.py	Ascarid-Molecular-Evolution/05_analyses/germline_codon_gc3s_adjusted.py (new 2026-10-29)	codon-bias contrasts of germline-restricted genes with GC3s controlled (regression on every gene, GC3s-matched contrasts)
+05_analyses/germline_restricted_codon.py	Ascarid-Molecular-Evolution/05_analyses/germline_restricted_codon.py (new 2026-10-29)	codon bias (dENC) of germline-restricted genes, on the S12B-C groups
+05_analyses/germline_restricted_dnds.py	Ascarid-Molecular-Evolution/05_analyses/germline_restricted_dnds.py	S12B-C
+05_analyses/hic_x_dosage.py	Ascarid-Molecular-Evolution/05_analyses/hic_x_dosage.py	table S6 (male X copy number from Hi-C)
+05_analyses/kaks_compartments.py	Ascarid-Molecular-Evolution/05_analyses/kaks_compartments.py	S13A
+05_analyses/main_figure_sources.tsv	Ascarid-Molecular-Evolution/05_analyses/main_figure_sources.tsv	panel list for the main figures
+05_analyses/make_cai_reference.py	Ascarid-Molecular-Evolution/05_analyses/make_cai_reference.py	CAI reference set (table S4)
+05_analyses/make_supplementary_tables.py	Ascarid-Molecular-Evolution/05_analyses/make_supplementary_tables.py	builds every supplementary table
+05_analyses/microsynteny.py	Ascarid-Molecular-Evolution/05_analyses/microsynteny.py	S5, table S5
+05_analyses/multivariate_insulation.py	Ascarid-Molecular-Evolution/05_analyses/multivariate_insulation.py	Fig 5D-E, S13B, table S9
+05_analyses/polymorphism_alternatives.tsv	Ascarid-Molecular-Evolution/05_analyses/polymorphism_alternatives.tsv	table S11 (curated rows)
+05_analyses/positive_selection.py	Ascarid-Molecular-Evolution/05_analyses/positive_selection.py	S3A, table S3
+05_analyses/rbh_quality.py	Ascarid-Molecular-Evolution/05_analyses/rbh_quality.py	S18
+05_analyses/region_lib.py	Ascarid-Molecular-Evolution/05_analyses/region_lib.py	symlink to ../lib/region_lib.py
+05_analyses/run_annotate_regions.sh	Ascarid-Molecular-Evolution/05_analyses/run_annotate_regions.sh	wrapper
+05_analyses/run_assemble_main_figures.sh	Ascarid-Molecular-Evolution/05_analyses/run_assemble_main_figures.sh	wrapper
+05_analyses/run_assemble_supplementary_figures.sh	Ascarid-Molecular-Evolution/05_analyses/run_assemble_supplementary_figures.sh	wrapper
+05_analyses/run_branch_dnds_decomposition.sh	Ascarid-Molecular-Evolution/05_analyses/run_branch_dnds_decomposition.sh	wrapper
+05_analyses/run_cbr_changepoint_relax.sh	Ascarid-Molecular-Evolution/05_analyses/run_cbr_changepoint_relax.sh	wrapper
+05_analyses/run_cbr_edge_check.sh	Ascarid-Molecular-Evolution/05_analyses/run_cbr_edge_check.sh (new 2026-10-29)	wrapper
+05_analyses/run_cbr_meta_profile.sh	Ascarid-Molecular-Evolution/05_analyses/run_cbr_meta_profile.sh	wrapper
+05_analyses/run_codon_usage_bias.sh	Ascarid-Molecular-Evolution/05_analyses/run_codon_usage_bias.sh	wrapper
+05_analyses/run_compositional_analysis.sh	Ascarid-Molecular-Evolution/05_analyses/run_compositional_analysis.sh	wrapper
+05_analyses/run_dnds_decomposition.sh	Ascarid-Molecular-Evolution/05_analyses/run_dnds_decomposition.sh	wrapper
+05_analyses/run_dnds_within_class.sh	Ascarid-Molecular-Evolution/05_analyses/run_dnds_within_class.sh	wrapper
+05_analyses/run_four_way_dnds.sh	Ascarid-Molecular-Evolution/05_analyses/run_four_way_dnds.sh	wrapper
+05_analyses/run_functional_enrichment.sh	Ascarid-Molecular-Evolution/05_analyses/run_functional_enrichment.sh	wrapper
+05_analyses/run_gene_density_cbr.sh	Ascarid-Molecular-Evolution/05_analyses/run_gene_density_cbr.sh	wrapper
+05_analyses/run_gene_set_venn.sh	Ascarid-Molecular-Evolution/05_analyses/run_gene_set_venn.sh (written 2026-10-26)	wrapper
+05_analyses/run_gene_structure.sh	Ascarid-Molecular-Evolution/05_analyses/run_gene_structure.sh	wrapper (2026-08-17 run, table S1 columns)
+05_analyses/run_gene_structure_rerun.sh	Ascarid-Molecular-Evolution/05_analyses/run_gene_structure_rerun.sh	wrapper (2026-10-13 run, Fig 2D)
+05_analyses/run_genome_trace.sh	Ascarid-Molecular-Evolution/05_analyses/run_genome_trace.sh	wrapper
+05_analyses/run_germline_codon_gc3s_adjusted.sh	Ascarid-Molecular-Evolution/05_analyses/run_germline_codon_gc3s_adjusted.sh (new 2026-10-29)	wrapper
+05_analyses/run_germline_restricted_codon.sh	Ascarid-Molecular-Evolution/05_analyses/run_germline_restricted_codon.sh (new 2026-10-29)	wrapper
+05_analyses/run_germline_restricted_dnds.sh	Ascarid-Molecular-Evolution/05_analyses/run_germline_restricted_dnds.sh	wrapper
+05_analyses/run_hic_x_dosage.sh	Ascarid-Molecular-Evolution/05_analyses/run_hic_x_dosage.sh	wrapper
+05_analyses/run_kaks_compartments.sh	Ascarid-Molecular-Evolution/05_analyses/run_kaks_compartments.sh	wrapper
+05_analyses/run_make_cai_reference.sh	Ascarid-Molecular-Evolution/05_analyses/run_make_cai_reference.sh	wrapper
+05_analyses/run_make_supplementary_tables.sh	Ascarid-Molecular-Evolution/05_analyses/run_make_supplementary_tables.sh	wrapper
+05_analyses/run_microsynteny.sh	Ascarid-Molecular-Evolution/05_analyses/run_microsynteny.sh	wrapper
+05_analyses/run_multivariate_insulation.sh	Ascarid-Molecular-Evolution/05_analyses/run_multivariate_insulation.sh	wrapper
+05_analyses/run_positive_selection.sh	Ascarid-Molecular-Evolution/05_analyses/run_positive_selection.sh	wrapper
+05_analyses/run_rbh_quality.sh	Ascarid-Molecular-Evolution/05_analyses/run_rbh_quality.sh	wrapper
+05_analyses/run_saturation_diagnostic.sh	Ascarid-Molecular-Evolution/05_analyses/run_saturation_diagnostic.sh	wrapper
+05_analyses/run_tox_pairwise_decomposition.sh	Ascarid-Molecular-Evolution/05_analyses/run_tox_pairwise_decomposition.sh	wrapper
+05_analyses/run_toxocara_annotation_diagnostic.sh	Ascarid-Molecular-Evolution/05_analyses/run_toxocara_annotation_diagnostic.sh	wrapper
+05_analyses/run_workbook_model_bridge.sh	Ascarid-Molecular-Evolution/05_analyses/run_workbook_model_bridge.sh	wrapper
+05_analyses/run_x_autosome_check.sh	Ascarid-Molecular-Evolution/05_analyses/run_x_autosome_check.sh	wrapper
+05_analyses/saturation_diagnostic.py	Ascarid-Molecular-Evolution/05_analyses/saturation_diagnostic.py	S11
+05_analyses/supplementary_figure_sources.tsv	Ascarid-Molecular-Evolution/05_analyses/supplementary_figure_sources.tsv	panel list for the supplementary figures
+05_analyses/supplementary_table_sources.tsv	Ascarid-Molecular-Evolution/05_analyses/supplementary_table_sources.tsv	inputs of every supplementary table
+05_analyses/tox_pairwise_decomposition.py	Ascarid-Molecular-Evolution/05_analyses/tox_pairwise_decomposition.py	S10
+05_analyses/toxocara_annotation_diagnostic.py	Ascarid-Molecular-Evolution/05_analyses/toxocara_annotation_diagnostic.py	S9, table S8
+05_analyses/workbook_model_bridge.py	Ascarid-Molecular-Evolution/05_analyses/workbook_model_bridge.py	expression-table join by position (Fig 5, S12, S13B, table S9)
+05_analyses/x_autosome_check.py	Ascarid-Molecular-Evolution/05_analyses/x_autosome_check.py	table S6 (rates per chromosome)
+06_outputs/make_rate_table.py	make_rate_table.py	rate and additivity table (table S2A)
+06_outputs/run_make_rate_table.sh	run_make_rate_table.sh	wrapper
+07_polymorphism/allele_balance_panel.py	07_polymorphism/allele_balance_panel.py	allele-balance table (S14D)
+07_polymorphism/check_duplicate_individuals.py	07_polymorphism/check_duplicate_individuals.py	sample identity (S17)
+07_polymorphism/depth_match.py	07_polymorphism/depth_match.py	depth matching (S14C)
+07_polymorphism/fetch_ena_reads.py	07_polymorphism/fetch_ena_reads.py	population reads from ENA
+07_polymorphism/fetch_ena_reads_wang.py	07_polymorphism/fetch_ena_reads_wang.py	tissue-control reads (BioProject PRJNA62057; S14A, table S10)
+07_polymorphism/figure_cohort_integrity.py	07_polymorphism/figure_cohort_integrity.py	S17
+07_polymorphism/figure_cohort_selection.py	07_polymorphism/figure_cohort_selection.py	S14
+07_polymorphism/figure_polymorphism.py	07_polymorphism/figure_polymorphism.py	Fig 6
+07_polymorphism/filter_genotypes.py	07_polymorphism/filter_genotypes.py	genotype filters and allele-balance screen
+07_polymorphism/germline_fraction_audit.py	07_polymorphism/germline_fraction_audit.py	germline screen (S14A, table S10)
+07_polymorphism/het_by_region.py	07_polymorphism/het_by_region.py	per-worm heterozygosity (S17)
+07_polymorphism/jackknife_individuals.py	07_polymorphism/jackknife_individuals.py	leave-one-worm-out (S17)
+07_polymorphism/joint_genotype.py	07_polymorphism/joint_genotype.py	joint genotyping
+07_polymorphism/logs/.gitkeep	written for the public repository	folder the 07 wrappers write their SLURM logs to
+07_polymorphism/make_callable_targets.py	07_polymorphism/make_callable_targets.py	callable coding targets
+07_polymorphism/map_reads.py	07_polymorphism/map_reads.py	read mapping
+07_polymorphism/mappability_mask.py	07_polymorphism/mappability_mask.py	mappability mask
+07_polymorphism/pi4_matched_control.py	07_polymorphism/pi4_matched_control.py	Ne-matched control (Fig 6B-C)
+07_polymorphism/pi_by_region.py	07_polymorphism/pi_by_region.py	piN/piS, pi0/pi4, MK and DoS (Fig 6A, 6D; McDonald–Kreitman row of table S11)
+07_polymorphism/pis_vs_position.py	07_polymorphism/pis_vs_position.py	neighborhood control (Results text)
+07_polymorphism/reference_bias_check.py	07_polymorphism/reference_bias_check.py	reference bias (S16)
+07_polymorphism/run_allele_balance_panel.sh	07_polymorphism/run_allele_balance_panel.sh	wrapper
+07_polymorphism/run_check_duplicate_individuals.sh	07_polymorphism/run_check_duplicate_individuals.sh	wrapper
+07_polymorphism/run_depth_match.sh	07_polymorphism/run_depth_match.sh	wrapper
+07_polymorphism/run_fetch_ena_reads.sh	07_polymorphism/run_fetch_ena_reads.sh	wrapper
+07_polymorphism/run_figure_cohort_integrity.sh	07_polymorphism/run_figure_cohort_integrity.sh	wrapper
+07_polymorphism/run_figure_cohort_selection.sh	07_polymorphism/run_figure_cohort_selection.sh	wrapper
+07_polymorphism/run_figure_polymorphism.sh	07_polymorphism/run_figure_polymorphism.sh	wrapper
+07_polymorphism/run_filter_genotypes.sh	07_polymorphism/run_filter_genotypes.sh	wrapper
+07_polymorphism/run_germline_fraction_audit.sh	07_polymorphism/run_germline_fraction_audit.sh	wrapper
+07_polymorphism/run_het_by_region.sh	07_polymorphism/run_het_by_region.sh	wrapper
+07_polymorphism/run_jackknife_individuals.sh	07_polymorphism/run_jackknife_individuals.sh	wrapper
+07_polymorphism/run_joint_genotype.sh	07_polymorphism/run_joint_genotype.sh	wrapper
+07_polymorphism/run_map_controls.sh	07_polymorphism/run_map_controls.sh	wrapper (tissue controls)
+07_polymorphism/run_map_full.sh	07_polymorphism/run_map_full.sh	wrapper (selected worms, full depth)
+07_polymorphism/run_map_reads.sh	07_polymorphism/run_map_reads.sh	wrapper (screening subsample, all runs)
+07_polymorphism/run_mappability_mask.sh	07_polymorphism/run_mappability_mask.sh	wrapper
+07_polymorphism/run_pi4_matched_control.sh	07_polymorphism/run_pi4_matched_control.sh	wrapper
+07_polymorphism/run_pi_by_region.sh	07_polymorphism/run_pi_by_region.sh	wrapper
+07_polymorphism/run_pis_vs_position.sh	07_polymorphism/run_pis_vs_position.sh	wrapper
+07_polymorphism/run_reference_bias_check.sh	07_polymorphism/run_reference_bias_check.sh	wrapper
+07_polymorphism/run_sweep_min_s4.sh	07_polymorphism/run_sweep_min_s4.sh	wrapper
+07_polymorphism/select_germline_samples.py	07_polymorphism/select_germline_samples.py	sample selection (table S10)
+07_polymorphism/style_boot.py	07_polymorphism/style_boot.py	helper referenced by a kept file
+07_polymorphism/supp_audit/analysed_runs.txt	07_polymorphism/supp_audit/ in the working folder on the analysis server	the 54 runs analysed by Landeryou et al. 2025; read by run_fetch_ena_reads.sh
+07_polymorphism/supp_audit/runs_not_in_paper.txt	07_polymorphism/supp_audit/ in the working folder on the analysis server	the BioProject's other eight runs
+07_polymorphism/supp_audit/supplementary_audit.tsv	07_polymorphism/supp_audit/ in the working folder on the analysis server	accessions printed by Landeryou et al. 2025 against those matched by read count, behind analysed_runs.txt
+07_polymorphism/sweep_min_s4.py	07_polymorphism/sweep_min_s4.py	window-size sweep (S15)
+CITATION.cff	written for the public repository	citation details for GitHub and Zenodo
+LICENSE	the repository's GitHub license	MIT license
+README.md	written for the public repository	setup, inputs, run order, figure-to-script map
+config.example.sh	Ascarid-Molecular-Evolution/config.example.sh, extended for the public repository	template for config.sh: every path and environment setting
+envs/kaks.exact.yml	conda env export of kaks on the analysis server	every package of that environment
+envs/kaks.yml	written for the public repository	conda environment, 01_gene_sets to 06_outputs
+envs/popgen.exact.yml	conda env export of popgen on the analysis server	every package of that environment
+envs/popgen.yml	written for the public repository	conda environment, 07_polymorphism
+lib/branch_lib.py	Ascarid-Molecular-Evolution/lib/branch_lib.py	branch-model table reader and masking (Fig 4, S8, S9, table S7)
+lib/paper_colors.py	Ascarid-Molecular-Evolution/lib/paper_colors.py	figure style module (every figure)
+lib/plain_text.py	Ascarid-Molecular-Evolution/lib/plain_text.py	plain-text P values and labels (figures)
+lib/rate_tables.py	Ascarid-Molecular-Evolution/lib/rate_tables.py	rate-table reader
+lib/region_lib.py	Ascarid-Molecular-Evolution/lib/region_lib.py	region, CBR and distance definitions

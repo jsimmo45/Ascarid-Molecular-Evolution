@@ -1,0 +1,12 @@
+# machine-specific settings (copy config.example.sh)
+config.sh
+
+# Python
+__pycache__/
+*.pyc
+
+# SLURM job logs written where the wrappers are submitted
+*.out
+*.err
+**/logs/*
+!**/logs/.gitkeep

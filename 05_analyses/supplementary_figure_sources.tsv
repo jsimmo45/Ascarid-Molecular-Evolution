@@ -1,0 +1,51 @@
+# Sources for assemble_supplementary_figures.py: one panel per line.
+# figure = final number (first citation in the text, 2026-10-12); was = the
+# frozen figure-map number it replaces; panel = short name used in the copy's
+# file name; path = the panel's SVG (PDF and PNG with the same stem are copied
+# too). Relative paths resolve against --base-dir (PROJECT_DIR, the miniprot
+# directory); ${POPGEN_DIR} is exported by the wrapper. Point a line at a newer
+# run here; renumber by editing the figure column. S15 of the frozen map was
+# vacated (its content is supplementary table S2). S1 and S4 point at the
+# 2026-10-14 reruns with boxes from every gene: if those ran on another day,
+# change the date in those four lines.
+#
+# 2026-10-26 (Jianbin Wang's review): the Ascaris dN/dS genome trace, main Fig 3
+# until then, joins S6 as its first panel, so S6 holds dN/dS, dN and dS for all
+# three species. S4 points at the 2026-10-26 codon reruns (scatter pair first,
+# both centroids filled); if those ran on another day, change 20261027 there.
+figure	was	panel	path
+S1	S3	A_consensus_decomposition	results/dnds_decomposition_20261014/dnds_consensus.svg
+S1	S3	B_dN_vs_dS	results/dnds_decomposition_20261014/dn_vs_ds_scatter.svg
+S2	S1	A-C_composition	results/compositional_analysis_20261012_140453/figS1_composition.svg
+S3	S8	A_dNdS_above_1	results/positive_selection_20261012/S8A_omega_above_one.svg
+S3	S8	B_relaxation_k	results/cbr_changepoint_20261031_130557/S8B_relaxation_k.svg
+S4	S2	Punivalens_codon_usage	results/codon_usage_parascaris_20261027/codon_usage_panel.svg
+S4	S2	Tcanis_codon_usage	results/codon_usage_toxocara_20261027/codon_usage_panel.svg
+S5	S7	A-B_microsynteny	results/microsynteny_20261012_103359/figS7_microsynteny.svg
+S6	S4	Ascaris_dNdS	results/genome_trace_S6v4_ascaris/Ka_Ks_genome_trace_Ascaris.svg
+S6	S4	Ascaris_dN	results/genome_trace_S6v4_ascaris/Ka_genome_trace_Ascaris.svg
+S6	S4	Ascaris_dS	results/genome_trace_S6v4_ascaris/Ks_genome_trace_Ascaris.svg
+S6	S4	Punivalens_dNdS	results/genome_trace_S6v4_parascaris/Ka_Ks_genome_trace_Parascaris.svg
+S6	S4	Punivalens_dN	results/genome_trace_S6v4_parascaris/Ka_genome_trace_Parascaris.svg
+S6	S4	Punivalens_dS	results/genome_trace_S6v4_parascaris/Ks_genome_trace_Parascaris.svg
+S6	S4	Bschroederi_dNdS	results/genome_trace_S6v5_baylisascaris/Ka_Ks_genome_trace_Baylisascaris.svg
+S6	S4	Bschroederi_dN	results/genome_trace_S6v5_baylisascaris/Ka_genome_trace_Baylisascaris.svg
+S6	S4	Bschroederi_dS	results/genome_trace_S6v5_baylisascaris/Ks_genome_trace_Baylisascaris.svg
+S7	S5	A_eliminated_subtypes	results/annotate_regions_20261012_203526/S5A_elim_subtypes.svg
+S7	S5	B_region_x_proximity	results/annotate_regions_20261012_203526/S5B_region_x_proximity.svg
+S8	S14	A-C_branch_grid	results/dnds_decomposition_20261022_123920/figS14_branch_grid_tox_region.svg
+S9	S13	Ascaris_labels	results/toxocara_annotation_diagnostic_20261012_215557/figS13_fold_by_stratum_as_region.svg
+S9	S13	Tcanis_labels	results/toxocara_annotation_diagnostic_20261012_215557/figS13_fold_by_stratum_tox_region.svg
+S10	S11	Tcanis_pairwise	results/tox_pairwise_20261012_103359/figS11_tox_pairwise.svg
+S11	S12	A-C_saturation	results/saturation_diagnostic_20261012/saturation_diagnostic.svg
+S12	S6	A_dNdS_vs_expression	results/functional_enrichment_20261019_112200/S6_dnds_vs_expression.svg
+S12	S6	B_germline_groups	results/germline_restricted_dnds_20261019_153637/S12B_germline_groups.svg
+S12	S6	C_germline_contrasts	results/germline_restricted_dnds_20261019_153637/S12C_germline_contrasts.svg
+S12	S6	D_function_classes	results/dnds_within_class_20261019_154004/S12D_function_classes.svg
+S13	S9	A_compartments	results/kaks_compartments_20261019_112458/figS9A_compartments.svg
+S13	S9	B_feature_correlations	results/multivariate_insulation_20261019_112243_teste_EV60hr/S9B_feature_correlations.svg
+S14	S16	A-D_cohort_selection	${POPGEN_DIR}/results/figures/s16_cohort_selection_20261031/S16_cohort_selection.svg
+S15	S17	window_sweep	${POPGEN_DIR}/results/pi4_sweep_20261013_pi_filtered_miss4_replot/S18_min_s4_sweep.svg
+S16	S18	reference_bias	${POPGEN_DIR}/results/refbias/refbias_20261013_filtered_miss4_postAB_replot/S17_reference_bias.svg
+S17	S19	A-D_cohort_integrity	${POPGEN_DIR}/results/figures/s19_cohort_integrity_20261031_filtered_miss4/S19_cohort_integrity.svg
+S18	S10	RBH_quality	results/rbh_quality_20261012_215555/figS10_rbh_quality.svg

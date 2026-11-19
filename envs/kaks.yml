@@ -1,0 +1,21 @@
+# Divergence analyses: 01_gene_sets to 06_outputs.
+# The packages the code uses, at the versions the paper used. kaks.exact.yml
+# lists every package of that environment (linux-64).
+#   conda env create -f envs/kaks.yml
+name: kaks
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.10
+  - numpy=2.2.6
+  - pandas=2.3.3
+  - scipy=1.15.2
+  - matplotlib-base=3.10.9
+  - biopython=1.87
+  - openpyxl=3.1.5        # reads the Ascaris annotation and expression workbook
+  - blast=2.17.0          # makeblastdb, blastp (02_orthologs)
+  - mafft=7.525           # protein alignment (03_rates)
+  - paml=4.10.10          # yn00, codeml, baseml (03_rates)
+  - minimap2=2.30         # 05_analyses/run_workbook_model_bridge.sh
+  - gffread=0.12.7        # gene-set extraction (README, Gene sets)
