@@ -1,5 +1,7 @@
 # Ascarid-Molecular-Evolution
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24374952.svg)](https://doi.org/10.5281/zenodo.24374952)
+
 Code for the molecular evolution of genes removed by programmed DNA elimination
 in four ascarid nematodes (*Ascaris*, *Parascaris univalens*, *Baylisascaris
 schroederi* and *Toxocara canis*): pairwise and branch-specific dN/dS, constraint
@@ -216,6 +218,10 @@ matplotlib, Biopython and openpyxl; BLAST+, MAFFT, PAML (yn00, codeml, baseml),
 minimap2 and gffread; bwa-mem2, SAMtools, BCFtools, GenMap and mosdepth. Exact
 versions are in `envs/`. The gene sets were made with miniprot v0.18-r281 and
 TransDecoder v5.5.0, which are not in the environments.
+
+## Citation
+
+Simmons JR. 2026. Ascarid-Molecular-Evolution: code for the molecular evolution of genes removed by programmed DNA elimination in ascarid nematodes, version 1.0.0. Zenodo. https://doi.org/10.5281/zenodo.24374952
 
 ## License
 
