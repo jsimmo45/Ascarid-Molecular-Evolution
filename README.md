@@ -217,12 +217,6 @@ minimap2 and gffread; bwa-mem2, SAMtools, BCFtools, GenMap and mosdepth. Exact
 versions are in `envs/`. The gene sets were made with miniprot v0.18-r281 and
 TransDecoder v5.5.0, which are not in the environments.
 
-## Citation
-
-Cite the release you used by its Zenodo DOI. `CITATION.cff` holds the citation
-details, which GitHub shows under "Cite this repository". The paper is in
-preparation.
-
 ## License
 
 MIT (see `LICENSE`).
